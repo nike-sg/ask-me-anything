@@ -114,8 +114,8 @@ RETURNING "id"
 `
 
 type InsertMessageParams struct {
-	RoomID  uuid.UUID
-	Message string
+	RoomID  uuid.UUID `json:"roomId"`
+	Message string    `json:"message"`
 }
 
 func (q *Queries) InsertMessage(ctx context.Context, arg InsertMessageParams) (uuid.UUID, error) {
