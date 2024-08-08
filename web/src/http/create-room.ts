@@ -3,8 +3,7 @@ interface CreateRoomRequest {
 }
 
 export async function createRoom({ theme }: CreateRoomRequest){
-  // ${import.meta.env.VITA_APP_BASE_URL}/rooms
-  const response = await fetch(`http://localhost:8080/api/rooms`, {
+  const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/rooms`, {
     method: 'POST',
     body: JSON.stringify({
       theme,
